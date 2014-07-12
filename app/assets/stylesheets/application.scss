@@ -77,6 +77,10 @@ main {
 .task-list {
   padding: 1em;
   & + & {
-    border-top: 1px solid chartreuse;
+    border-top: 1px solid darkblue;
+  }
+
+  h1 {
+    font-size: 110%;
   }
 }
