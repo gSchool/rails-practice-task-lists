@@ -8,6 +8,7 @@ feature 'Tasks' do
     TaskList.create!(name: "Work List")
 
     login(user)
+    expect(page).to have_content("Nothing here to see!")
     click_on "+ Add Task", match: :first
     fill_in "Description", with: "Something important"
     two_days_from_now = 2.days.from_now.to_date
@@ -19,6 +20,7 @@ feature 'Tasks' do
     expect(page).to have_content("Something important")
     expect(page).to have_content("Task was created successfully!")
     expect(page).to have_content("2 days")
+    expect(page).to have_no_content("Nothing here to see!")
   end
 
   scenario 'User can complete tasks' do

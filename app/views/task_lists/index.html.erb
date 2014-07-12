@@ -3,7 +3,12 @@
   <section class="task-list">
     <%= link_to "+ Add Task", new_task_list_task_path(task_list), class: "add-task" %>
     <h1><%= task_list.name %></h1>
-    <%= render partial: 'tasks/task', collection: task_list.tasks.incomplete.order(:due_date) %>
+    <% tasks = task_list.tasks.incomplete.order(:due_date) %>
+    <% if tasks.present? %>
+      <%= render partial: 'tasks/task', collection: tasks %>
+    <% else %>
+      <div class="empty">Nothing here to see!</div>
+    <% end %>
   </section>
 
 <% end %>

@@ -104,6 +104,14 @@ main {
   }
 }
 
+.empty {
+  border: 2px solid #ccc;
+  background: #efefef;
+  padding: 1em;
+  font-style: italic;
+  text-align: center;
+}
+
 .task-due {
   color: #666;
 }
