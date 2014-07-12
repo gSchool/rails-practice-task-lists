@@ -129,3 +129,15 @@ main {
     padding: .3em .5em;
   }
 }
+
+.error {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: maroon;
+}
+
+.field_with_errors {
+  label {
+    color: maroon;
+  }
+}

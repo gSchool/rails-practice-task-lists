@@ -2,6 +2,10 @@
 
   <h2>Add a Task</h2>
 
+  <% if f.object.errors.any? %>
+    <div class="error">Your task could not be created</div>
+  <% end %>
+
   <div class="form-row">
     <%= f.label :description, class: "form-label" %>
     <%= f.text_field :description %>
