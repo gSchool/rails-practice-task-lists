@@ -1,9 +1,9 @@
 require 'rails_helper'
 require 'capybara/rails'
 
-feature 'Task lists' do
+feature 'Tasks' do
 
-  scenario 'User can view task lists' do
+  scenario 'User can view tasks' do
     user = create_user email: "user@example.com"
     TaskList.create!(name: "Work List")
 
