@@ -28,6 +28,7 @@ As a user
 When I log in I should see a "new task" link next to each task list name
 When I click that link, I should see a description field and a date field (w/ year / month / day dropdowns)
 When I fill in a description and click "Create Task" I should see the task appear beneath the task list
+And I should see a flash message that reads "Task was created successfully!"
 Each task should have the due date represented in relative time
 ```
 
@@ -90,3 +91,13 @@ New task page:
 New task page w/ errors:
 
 <img src="project/03-new-with-errors.png">
+
+Flash message:
+
+<img src="project/04-flash-message.png">
+
+## References
+
+* [Flash](http://guides.rubyonrails.org/action_controller_overview.html#the-flash)
+* [Date Select](http://api.rubyonrails.org/classes/ActionView/Helpers/DateHelper.html#method-i-date_select)
+* [Validations in views](http://guides.rubyonrails.org/active_record_validations.html#displaying-validation-errors-in-views)
