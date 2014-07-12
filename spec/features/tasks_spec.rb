@@ -4,15 +4,10 @@ require 'capybara/rails'
 feature 'Task lists' do
 
   scenario 'User can view task lists' do
-    create_user email: "user@example.com"
+    user = create_user email: "user@example.com"
     TaskList.create!(name: "Work List")
 
-    visit signin_path
-    click_on "Login"
-    fill_in "Email", with: "user@example.com"
-    fill_in "Password", with: "password"
-    click_on "Login"
-
+    login(user)
     click_on "+ Add Task", match: :first
     fill_in "Description", with: "Something important"
     two_days_from_now = 2.days.from_now.to_date
