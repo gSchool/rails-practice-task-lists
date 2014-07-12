@@ -21,4 +21,17 @@ feature 'Tasks' do
     expect(page).to have_content("2 days")
   end
 
+  scenario 'User can complete tasks' do
+    user = create_user email: "user@example.com"
+    task_list = TaskList.create!(name: "Work List")
+    task = task_list.tasks.create!(description: "Some task", due_date: 2.days.from_now)
+
+    login(user)
+    click_on "Complete"
+
+    expect(page).to have_content("Task was completed successfully!")
+    expect(page).to have_no_content("Some task")
+    expect(task.reload).to eq(task)
+  end
+
 end

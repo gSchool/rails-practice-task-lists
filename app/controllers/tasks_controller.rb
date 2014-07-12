@@ -15,6 +15,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    @task = @task_list.tasks.find(params[:id])
+    @task.update_attributes(completed: true)
+    redirect_to root_path, notice: "Task was completed successfully!"
+  end
+
   private
 
   def find_task_list

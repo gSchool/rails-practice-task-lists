@@ -3,12 +3,7 @@
  *= require_self
  */
 
-.container {
-  width: 960px;
-  margin: 0 auto;
-  padding: 1em;
-  box-sizing: border-box;
-
+.clearfix {
   &:after {
     visibility: hidden;
     display: block;
@@ -17,6 +12,14 @@
     clear: both;
     height: 0;
   }
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  @extend .clearfix;
 }
 
 header {
@@ -91,6 +94,7 @@ main {
 }
 
 .task {
+  @extend .clearfix;
   border: 2px solid #ccc;
   background: #efefef;
   padding: .5em;
@@ -140,4 +144,8 @@ main {
   label {
     color: maroon;
   }
+}
+
+.complete-button {
+  float: right;
 }
