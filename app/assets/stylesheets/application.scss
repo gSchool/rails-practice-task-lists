@@ -82,5 +82,50 @@ main {
 
   h1 {
     font-size: 110%;
+    margin-top: 0;
+  }
+}
+
+.add-task {
+  float: right;
+}
+
+.task {
+  border: 2px solid #ccc;
+  background: #efefef;
+  padding: .5em;
+
+  & + & {
+    margin-top: .5em;
+  }
+}
+
+.task-due {
+  color: #666;
+}
+
+.flash {
+  &.notice {
+    background: #B6D7A8;
+    border: 2px solid #2D6E10;
+    padding: .5em;
+  }
+}
+
+.task-form {
+  label {
+    display: block;
+    margin-bottom: .5em;
+  }
+
+  div.form-row {
+    padding-bottom: 2em;
+  }
+
+  input[type=submit] {
+    background: navy;
+    color: white;
+    border: 2px solid #666;
+    padding: .3em .5em;
   }
 }
