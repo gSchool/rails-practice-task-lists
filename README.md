@@ -1,11 +1,3 @@
-# USING THIS TEMPLATE
-
-* `cp -r rails-practice-template my-new-thing`
-* `rm -rf .git .idea`
-* add a new database name to config/database.yml
-* change the `replace_me_controller` with something real
-* put images in the project directory and link them under `wireframes`
-
 # Rails Practice
 
 ## Setup
