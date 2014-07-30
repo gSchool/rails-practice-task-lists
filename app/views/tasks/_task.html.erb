@@ -4,6 +4,6 @@
   <% end %>
   <span class="task-description"><%= task.description %></span>
   <span class="task-due">
-    (<%= distance_of_time_in_words(Time.now, task.due_date) %>)
+    (<%= distance_of_time_in_words(Time.now, task.due_date + 1.day) %>)
   </span>
 </div>
