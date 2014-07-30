@@ -72,13 +72,6 @@ And I select a user's name from a dropdown and click "filter"
 Then I should see only tasks that are assigned to that user
 ```
 
-**Non-logged in users should not be able to see the new task page, or be able to create a task**
-```
-As a non-logged in user
-When I visit the new task path for any task list
-Then I should be redirected to the login page
-```
-
 ## Wireframes
 
 Task lists page:
