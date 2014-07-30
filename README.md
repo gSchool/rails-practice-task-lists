@@ -56,11 +56,20 @@ When I see a task list with no tasks
 Then I should see a message that reads "Nothing here to see!"
 ```
 
-**Users should only be able to see tasks that they created**
+**Users should be able to assign tasks to users**
 ```
 As a user
-When I visit the task lists page
-Then I should only see tasks that I've created
+When I create a new task
+I can optionally add a user to the task
+And when a user is assigned a task, I can see that user on the index page
+```
+
+**Users can filter tasks assigned to a particular user from the index page**
+```
+As a user
+When I go to the homepage
+And I select a user's name from a dropdown and click "filter"
+Then I should see only tasks that are assigned to that user
 ```
 
 **Non-logged in users should not be able to see the new task page, or be able to create a task**
@@ -87,6 +96,14 @@ New task page w/ errors:
 Flash message:
 
 <img src="project/04-flash-message.png">
+
+New form with user:
+
+<img src="project/05-new-with-user.png">
+
+Index page with filter:
+
+<img src="project/06-index-with-assignees.png">
 
 ## References
 
