@@ -6,4 +6,7 @@
   <span class="task-due">
     (<%= distance_of_time_in_words(Time.now, task.due_date + 1.day) %>)
   </span>
+  <% if task.user %>
+    <%= task.user.name %>
+  <% end %>
 </div>

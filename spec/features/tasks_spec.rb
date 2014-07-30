@@ -15,8 +15,12 @@ feature 'Tasks' do
     select two_days_from_now.strftime("%Y"), from: "task_due_date_1i"
     select two_days_from_now.strftime("%B"), from: "task_due_date_2i"
     select two_days_from_now.strftime("%-d"), from: "task_due_date_3i"
+
+    #user can assign task to another user
+    select "Some User", from: "Assigned to"
     click_on "Create Task"
 
+    expect(page).to have_content("Some User")
     expect(page).to have_content("Something important")
     expect(page).to have_content("Task was created successfully!")
     expect(page).to have_content("2 days")

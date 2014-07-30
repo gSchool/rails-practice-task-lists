@@ -16,6 +16,11 @@
     <%= f.date_select :due_date %>
   </div>
 
+  <div class="form-rom">
+    <%= f.label :assigned_to, class: "form-label" %>
+    <%= f.collection_select :assigned_to, User.order(:name), :id, :name, include_blank: "Select a user" %>
+  </div>
+
   <div class="form-row">
     <%= f.submit %>
   </div>

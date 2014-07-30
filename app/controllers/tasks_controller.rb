@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = @task_list.tasks.new(params.require(:task).permit(:description, :due_date))
+    @task = @task_list.tasks.new(params.require(:task).permit(:description, :due_date, :assigned_to))
     if @task.save
       redirect_to root_path, notice: "Task was created successfully!"
     else
