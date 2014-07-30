@@ -5,8 +5,8 @@ default: &default
 
 development:
   <<: *default
-  database: g2-rails-practice-development
+  database: g2-rails-practice-task-list-development
 
 test:
   <<: *default
-  database: g2-rails-practice-test
+  database: g2-rails-practice-task-list-test
