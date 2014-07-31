@@ -6,6 +6,11 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def index
+    @task = Task.where(Task.assigned_to: = params[:assigned_to])
+    p params
+  end
+
   def create
     @task = @task_list.tasks.new(params.require(:task).permit(:description, :due_date, :assigned_to))
     if @task.save
