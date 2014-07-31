@@ -7,8 +7,6 @@ class TasksController < ApplicationController
   end
 
   def index
-    @task = Task.where(Task.assigned_to: = params[:assigned_to])
-    p params
   end
 
   def create
