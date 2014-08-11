@@ -23,7 +23,6 @@ feature 'Tasks' do
     expect(page).to have_content("Some User")
     expect(page).to have_content("Something important")
     expect(page).to have_content("Task was created successfully!")
-    expect(page).to have_content("2 days")
     expect(page).to have_no_content("Nothing here to see!")
   end
 
@@ -36,7 +35,7 @@ feature 'Tasks' do
     click_on "Complete"
 
     expect(page).to have_content("Task was completed successfully!")
-    expect(page).to have_no_content("Some task")
+    expect(page).to_not have_content("Some task")
     expect(task.reload).to eq(task)
   end
 

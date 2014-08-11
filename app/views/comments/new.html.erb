@@ -1,0 +1,11 @@
+<h2>Add Comment</h2>
+
+<%= form_for [@task, @comment] do |f| %>
+  <%= hidden_field_tag :comment_id, params[:comment_id] %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <br>
+  <br>
+  <%= f.submit %>
+
+<% end %>
