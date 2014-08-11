@@ -1,14 +1,21 @@
+<%= form_tag('/', method: :get) do %>
+  <%= collection_select(:task, :assigned_to, User.all, :id, :name, include_user: "Select User") %>
+  <%= submit_tag "Filter" %>
+<% end %>
+
 <% @task_lists.each do |task_list| %>
 
   <section class="task-list">
     <%= link_to "+ Add Task", new_task_list_task_path(task_list), class: "add-task" %>
     <h1><%= task_list.name %></h1>
     <% tasks = task_list.tasks.incomplete.order(:due_date) %>
+    <% if @assigned_to %>
+      <% tasks = tasks.where(:assigned_to => @assigned_to) %>
+    <% end %>
     <% if tasks.present? %>
       <%= render partial: 'tasks/task', collection: tasks %>
     <% else %>
       <div class="empty">Nothing here to see!</div>
     <% end %>
-  </section>
-
 <% end %>
+</section>

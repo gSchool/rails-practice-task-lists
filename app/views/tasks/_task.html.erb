@@ -1,9 +1,18 @@
 <div class="task">
   <%= form_for [task.task_list, task] do |f| %>
     <%= f.submit "Complete", class: "complete-button" %>
+
   <% end %>
-  <span class="task-description"><%= task.description %></span>
+  <span class="task-description"><%= link_to task.description, edit_task_list_task_path(task.task_list, task) %></span>
   <span class="task-due">
-    (<%= distance_of_time_in_words(Time.now, task.due_date) %>)
+    (<%= distance_of_time_in_words(Time.now, task.due_date + 1.day) %>)
   </span>
+
+
+  <% if task.user %>
+    <%= task.user.name %>
+  <% end %>
+  <%= link_to "Comment", new_task_comment_path(task) %>
+
+  <%= render task.comments %>
 </div>
